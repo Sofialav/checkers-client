@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Button from "@material-ui/core/Button";
 
 class LoginForm extends Component {
   render() {
@@ -20,7 +21,7 @@ class LoginForm extends Component {
             onChange={this.props.onChange}
             name="password"
           ></input>
-          <button type="submit">{this.props.buttonName}</button>
+          <Button type="submit">{this.props.buttonName}</Button>
         </form>
       </div>
     );
