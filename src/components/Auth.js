@@ -8,7 +8,7 @@ class Auth extends Component {
       return (
         <div>
           <p>{this.props.errors}</p>
-          <LoginFormContainer />
+          <LoginFormContainer history={this.props.history} />
           <SignupFormContainer />
         </div>
       );

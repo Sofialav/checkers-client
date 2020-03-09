@@ -6,7 +6,11 @@ class AuthContainer extends Component {
   render() {
     return (
       <div>
-        <Auth user={this.props.user} errors={this.props.errors} />
+        <Auth
+          user={this.props.user}
+          errors={this.props.errors}
+          history={this.props.history}
+        />
       </div>
     );
   }

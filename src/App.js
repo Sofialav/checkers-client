@@ -4,15 +4,14 @@ import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
 import "./App.css";
 import AuthContainer from "./components/AuthContainer";
+import ChannelsContainer from "./components/ChannelsContainer";
 
 class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div>
-          Hello
-          <Route path="/" exact component={AuthContainer} />
-        </div>
+        <Route path="/" exact component={AuthContainer} />
+        <Route path="/channels" exact component={ChannelsContainer} />
       </Provider>
     );
   }

@@ -10,6 +10,7 @@ class LoginFormContainer extends React.Component {
     event.preventDefault();
     this.props.login(this.state);
     this.setState({ name: "", password: "" });
+    this.props.history.push("/channels");
   };
 
   onChange = event => {
