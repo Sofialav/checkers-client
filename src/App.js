@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
 import "./App.css";
 import LoginFormContainer from "./components/LoginFormContainer";
+import AuthContainer from "./components/AuthContainer";
 
 class App extends Component {
   render() {
@@ -11,7 +12,7 @@ class App extends Component {
       <Provider store={store}>
         <div>
           Hello
-          <Route path="/" exact component={LoginFormContainer} />
+          <Route path="/" exact component={AuthContainer} />
         </div>
       </Provider>
     );
