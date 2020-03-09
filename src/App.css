@@ -3,6 +3,7 @@ body {
   background-repeat: repeat;
   background-position: top left;
   text-align: center;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   /* font-family: 'Roboto', sans-serif; */
 }
