@@ -6,6 +6,7 @@ class LoginForm extends Component {
       <div>
         <form onSubmit={this.props.onSubmit}>
           <input
+            className="form-control form-control-lg"
             placeholder="name"
             type="text"
             value={this.props.values.name}
@@ -13,13 +14,16 @@ class LoginForm extends Component {
             name="name"
           ></input>
           <input
+            className="form-control form-control-lg"
             placeholder="password"
             type="password"
             value={this.props.values.password}
             onChange={this.props.onChange}
             name="password"
           ></input>
-          <button type="submit">{this.props.buttonName}</button>
+          <button className="btn btn-outline-success btn-lg" type="submit">
+            {this.props.buttonName}
+          </button>
         </form>
       </div>
     );

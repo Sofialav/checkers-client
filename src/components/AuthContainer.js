@@ -5,7 +5,7 @@ import Auth from "./Auth";
 class AuthContainer extends Component {
   render() {
     return (
-      <div>
+      <div className="d-flex justify-content-center">
         <Auth
           user={this.props.user}
           errors={this.props.errors}
