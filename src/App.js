@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
 import { Route } from "react-router-dom";
-import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import AuthContainer from "./components/AuthContainer";
 import ChannelsContainer from "./components/ChannelsContainer";
 
