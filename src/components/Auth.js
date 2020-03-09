@@ -8,12 +8,12 @@ class Auth extends Component {
       return (
         <div>
           <p>{this.props.errors}</p>
-          <LoginFormContainer history={this.props.history} />
+          <LoginFormContainer />
           <SignupFormContainer />
         </div>
       );
     }
-    return <div></div>;
+    return <div>{this.props.history.push("/channels")}</div>;
   }
 }
 
