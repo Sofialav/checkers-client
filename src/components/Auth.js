@@ -7,6 +7,7 @@ class Auth extends Component {
     if (!this.props.user) {
       return (
         <div>
+          <p>{this.props.errors}</p>
           <LoginFormContainer />
           <SignupFormContainer />
         </div>

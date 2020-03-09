@@ -6,7 +6,7 @@ class AuthContainer extends Component {
   render() {
     return (
       <div>
-        <Auth user={this.props.user} />
+        <Auth user={this.props.user} errors={this.props.errors} />
       </div>
     );
   }
@@ -14,7 +14,8 @@ class AuthContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    user: state.user
+    user: state.user,
+    errors: state.errors
   };
 }
 export default connect(mapStateToProps)(AuthContainer);
