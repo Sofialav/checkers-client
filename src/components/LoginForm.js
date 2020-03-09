@@ -5,7 +5,7 @@ class LoginForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.onSubmit}>
-          <h3>Please login to play the game:</h3>
+          {/* <h3>Please login to play the game:</h3> */}
           <input
             placeholder="name"
             type="text"
@@ -20,7 +20,7 @@ class LoginForm extends Component {
             onChange={this.props.onChange}
             name="password"
           ></input>
-          <button type="submit">Login</button>
+          <button type="submit">{this.props.buttonName}</button>
         </form>
       </div>
     );

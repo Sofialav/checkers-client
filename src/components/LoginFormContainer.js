@@ -20,11 +20,15 @@ class LoginFormContainer extends React.Component {
 
   render() {
     return (
-      <LoginForm
-        onSubmit={this.onSubmit}
-        onChange={this.onChange}
-        values={this.state}
-      />
+      <div>
+        <h3>Please login to play the game:</h3>
+        <LoginForm
+          onSubmit={this.onSubmit}
+          onChange={this.onChange}
+          values={this.state}
+          buttonName="Login"
+        />
+      </div>
     );
   }
 }
