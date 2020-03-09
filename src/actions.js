@@ -1,6 +1,6 @@
 import request from "superagent";
-const baseUrl = "http://localhost:4000";
-// const baseUrl = "https://damp-mesa-25825.herokuapp.com/"
+// const baseUrl = "http://localhost:4000";
+const baseUrl = "https://damp-mesa-25825.herokuapp.com/";
 
 //add  error:
 export const displayError = payload => {
