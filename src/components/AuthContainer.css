@@ -1,0 +1,10 @@
+#form-container {
+  background: #ffffff98;
+  border-radius: 20px;
+  box-shadow: 0 -5px 10px rgba(178, 190, 191, 0.7),
+    0 5px 10px rgba(178, 190, 191, 0.7), 0 3px 3px rgba(178, 190, 191, 0.7),
+    0 10px 20px rgba(179, 178, 191, 0.7), 0 6px 6px rgba(179, 178, 191, 0.7),
+    0 -10px 20px rgba(179, 178, 191, 0.7);
+  margin: 20px;
+  padding: 30px 60px;
+}

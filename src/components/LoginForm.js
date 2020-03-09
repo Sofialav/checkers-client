@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./LoginForm.css";
 
 class LoginForm extends Component {
   render() {
@@ -6,7 +7,7 @@ class LoginForm extends Component {
       <div>
         <form onSubmit={this.props.onSubmit}>
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg custom-form"
             placeholder="name"
             type="text"
             value={this.props.values.name}
@@ -14,14 +15,14 @@ class LoginForm extends Component {
             name="name"
           ></input>
           <input
-            className="form-control form-control-lg"
+            className="form-control form-control-lg custom-form"
             placeholder="password"
             type="password"
             value={this.props.values.password}
             onChange={this.props.onChange}
             name="password"
           ></input>
-          <button className="btn btn-outline-success btn-lg" type="submit">
+          <button className="btn btn-outline-default btn-lg" type="submit">
             {this.props.buttonName}
           </button>
         </form>
