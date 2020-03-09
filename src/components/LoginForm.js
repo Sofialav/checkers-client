@@ -6,7 +6,6 @@ class LoginForm extends Component {
     return (
       <div>
         <form onSubmit={this.props.onSubmit}>
-          {/* <h3>Please login to play the game:</h3> */}
           <input
             placeholder="name"
             type="text"
