@@ -1,9 +1,22 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import Channels from "./Channels";
 
 class ChannelsContainer extends Component {
   render() {
-    return <div>Channels!</div>;
+    if (this.props.channels.length < 1) {
+      return <div>Loading...</div>;
+    }
+    return (
+      <div>
+        Channels!
+        <Channels channels={this.props.channels} />
+      </div>
+    );
   }
 }
 
-export default ChannelsContainer;
+function marStateToProps(state) {
+  return { channels: state.channels };
+}
+export default connect(marStateToProps)(ChannelsContainer);
