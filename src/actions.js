@@ -58,25 +58,31 @@ export function signup(data) {
   };
 }
 // get channels
+
+// export const allChannels = payload => {
+//   return {
+//     type: "ALL_CHANNELS",
+//     payload
+//   };
+// };
+
 // const stream = new EventSource(`${baseUrl}/stream`);
-
-export const allChannels = payload => {
-  return {
-    type: "ALL_CHANNELS",
-    payload
-  };
-};
-
-export function getChannels() {
-  return async function(dispatch) {
-    try {
-      console.log("GETCHANNELS!!!");
-      const response = await request.get(`${baseUrl}/stream`);
-      console.log("response check", response);
-      const action = allChannels(response.body);
-      dispatch(action);
-    } catch (error) {
-      console.log("throw me an error", error);
-    }
-  };
-}
+// export function getChannels() {
+//   stream.onmessage = event => {
+//     console.log("event.data TEST", event.data);
+//     const parser = JSON.parse(event.data);
+//     this.props.dispatch(parser);
+//     console.log("PARSED DATA", parser);
+//   };
+// return async function(dispatch) {
+//   try {
+//     console.log("GETCHANNELS!!!");
+//     const response = await request.get(`${baseUrl}/stream`);
+//     console.log("response check", response);
+//     const action = allChannels(response.body);
+//     dispatch(action);
+//   } catch (error) {
+//     console.log("throw me an error", error);
+//   }
+// };
+// }
