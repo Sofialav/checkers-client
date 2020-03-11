@@ -14,19 +14,15 @@ class ChannelsContainer extends Component {
   }
 
   render() {
-    if (!this.props.channels.length) {
-      return <div>Loading...</div>;
-    }
     return (
       <div>
-        Channels!
-        <Channels channels={this.props.channels} />
+        <Channels channels={this.props.channels} user={this.props.user} />
       </div>
     );
   }
 }
 
 function marStateToProps(state) {
-  return { channels: state.channels };
+  return { channels: state.channels, user: state.user };
 }
 export default connect(marStateToProps)(ChannelsContainer);

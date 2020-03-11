@@ -22,19 +22,20 @@ export const loginUser = payload => {
     payload
   };
 };
-export function login(data) {
+export function login(data, history) {
   return async function(dispatch) {
     try {
       const response = await request.post(`${baseUrl}/login`).send(data);
       const action = loginUser(response.body.jwt);
       await dispatch(action);
-      dispatch(removeError());
+      await dispatch(removeError());
+      return history.push("/channels");
     } catch (error) {
       if (error.response) {
         const errorMessage = displayError(error.response.body.message);
         return dispatch(errorMessage);
       }
-      console.error("Unexpected error");
+      console.error(error);
     }
   };
 }
@@ -74,15 +75,4 @@ export function signup(data) {
 //     this.props.dispatch(parser);
 //     console.log("PARSED DATA", parser);
 //   };
-// return async function(dispatch) {
-//   try {
-//     console.log("GETCHANNELS!!!");
-//     const response = await request.get(`${baseUrl}/stream`);
-//     console.log("response check", response);
-//     const action = allChannels(response.body);
-//     dispatch(action);
-//   } catch (error) {
-//     console.log("throw me an error", error);
-//   }
-// };
 // }

@@ -8,7 +8,7 @@ class LoginFormContainer extends React.Component {
 
   onSubmit = event => {
     event.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state, this.props.history);
     this.setState({ name: "", password: "" });
   };
 
@@ -32,5 +32,9 @@ class LoginFormContainer extends React.Component {
     );
   }
 }
-
-export default connect(null, { login })(LoginFormContainer);
+function mapStateToProps(state) {
+  return {
+    errors: state.errors
+  };
+}
+export default connect(mapStateToProps, { login })(LoginFormContainer);

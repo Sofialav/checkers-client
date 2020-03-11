@@ -9,12 +9,16 @@ class Auth extends Component {
       return (
         <div>
           <p id="error-msg">{this.props.errors}</p>
-          <LoginFormContainer />
+          <LoginFormContainer history={this.props.history} />
           <SignupFormContainer />
         </div>
       );
     } else {
-      return <div>{this.props.history.push("/channels")}</div>;
+      return (
+        <div>
+          <p>INFOBOX holder</p>
+        </div>
+      );
     }
   }
 }
