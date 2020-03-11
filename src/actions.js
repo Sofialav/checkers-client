@@ -30,8 +30,11 @@ export function login(data) {
       await dispatch(action);
       dispatch(removeError());
     } catch (error) {
-      const errorMessage = displayError(error.response.body.message);
-      dispatch(errorMessage);
+      if (error.response) {
+        const errorMessage = displayError(error.response.body.message);
+        return dispatch(errorMessage);
+      }
+      console.error("Unexpected error");
     }
   };
 }
@@ -51,6 +54,29 @@ export function signup(data) {
     } catch (error) {
       const errorMessage = displayError(error.response.body.message);
       dispatch(errorMessage);
+    }
+  };
+}
+// get channels
+// const stream = new EventSource(`${baseUrl}/stream`);
+
+export const allChannels = payload => {
+  return {
+    type: "ALL_CHANNELS",
+    payload
+  };
+};
+
+export function getChannels() {
+  return async function(dispatch) {
+    try {
+      console.log("GETCHANNELS!!!");
+      const response = await request.get(`${baseUrl}/stream`);
+      console.log("response check", response);
+      const action = allChannels(response.body);
+      dispatch(action);
+    } catch (error) {
+      console.log("throw me an error", error);
     }
   };
 }

@@ -13,8 +13,9 @@ class Auth extends Component {
           <SignupFormContainer />
         </div>
       );
+    } else {
+      return <div>{this.props.history.push("/channels")}</div>;
     }
-    return <div>{this.props.history.push("/channels")}</div>;
   }
 }
 
