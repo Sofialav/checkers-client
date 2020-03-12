@@ -5,6 +5,8 @@ import Channels from "./Channels";
 
 const baseUrl = "http://localhost:4000";
 class ChannelsContainer extends Component {
+  state = { name: "" };
+
   stream = new EventSource(`${baseUrl}/stream`);
   componentDidMount() {
     this.stream.onmessage = event => {
@@ -12,11 +14,24 @@ class ChannelsContainer extends Component {
       this.props.dispatch(parsed);
     };
   }
-
+  onChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    });
+  };
+  onSubmit = event => {
+    event.preventDefault();
+  };
   render() {
     return (
       <div>
-        <Channels channels={this.props.channels} user={this.props.user} />
+        <Channels
+          channels={this.props.channels}
+          user={this.props.user}
+          onChange={this.onChange}
+          onSubmit={this.onSubmit}
+          values={this.state}
+        />
       </div>
     );
   }
