@@ -6,7 +6,7 @@ class Channels extends Component {
     if (!this.props.user) {
       return (
         <h3>
-          Please <Link to="/">login</Link> to view the channels
+          Please <Link to="/">login</Link> to view channels
         </h3>
       );
     }
@@ -18,7 +18,7 @@ class Channels extends Component {
     });
     return (
       <div>
-        <form>
+        <form onSubmit={this.props.onSubmit}>
           <h3>Create a new channel:</h3>
           <input
             placeholder="Channel name"
@@ -27,9 +27,7 @@ class Channels extends Component {
             name="name"
             value={this.props.values.name}
           ></input>
-          <button type="submit" onSubmit={this.props.onSubmit}>
-            Add
-          </button>
+          <button type="submit">Add</button>
         </form>
         <div>
           <h3>Join a channel:</h3>

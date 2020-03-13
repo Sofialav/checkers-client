@@ -4,7 +4,7 @@ function reducer(state = [], action) {
     case "ALL_CHANNELS":
       return action.payload;
 
-    case "NEW_CHANNEL":
+    case "ADD_CHANNEL":
       return [...state, action.payload];
 
     default:
